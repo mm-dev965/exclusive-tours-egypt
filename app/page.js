@@ -171,11 +171,11 @@ export default function Home() {
   const selectedCat = categories.find(c => c.id === activeCategory);
 
   return (
-    <div className={`min-h-screen bg-[#040A18] text-[#F3F4F6] font-sans ${lang === 'ar' ? 'rtl' : 'ltr'}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <div className={`min-h-screen bg-[#0B1736] text-[#F3F4F6] font-sans ${lang === 'ar' ? 'rtl' : 'ltr'}`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       {/* Header / Navbar */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0E1D3B]/95 backdrop-blur-md border-b border-[#D4AF37]/50 shadow-2xl">
-        <div className="max-w-7xl mx-auto px-6 h-28 flex items-center justify-between">
-          <a href="#contact" className="px-5 py-2.5 bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-[#030712] font-bold rounded-lg shadow-lg hover:opacity-90 transition text-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#112244]/95 backdrop-blur-md border-b border-[#D4AF37]/50 shadow-2xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-24 sm:h-28 flex items-center justify-between">
+          <a href="#contact" className="px-3 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-[#030712] font-bold rounded-lg shadow-lg hover:opacity-90 transition text-xs sm:text-sm">
             {content.bookVip}
           </a>
           
@@ -186,19 +186,19 @@ export default function Home() {
             <a href="#contact" className="hover:text-[#D4AF37] transition">{content.navContact}</a>
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <button 
               onClick={() => setLang(lang === 'ar' ? 'en' : 'ar')}
-              className="px-3.5 py-1.5 border border-[#D4AF37]/60 text-[#D4AF37] rounded-full hover:bg-[#D4AF37] hover:text-[#030712] transition text-xs font-bold"
+              className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 border border-[#D4AF37]/60 text-[#D4AF37] rounded-full hover:bg-[#D4AF37] hover:text-[#030712] transition text-[10px] sm:text-xs font-bold"
             >
               {lang === 'ar' ? 'English' : 'العربية'}
             </button>
-            <div className={lang === 'ar' ? 'text-right' : 'text-left'}>
+            <div className={`hidden sm:block ${lang === 'ar' ? 'text-right' : 'text-left'}`}>
               <span className="text-sm md:text-base font-extrabold tracking-wider text-[#D4AF37] block">{content.brand}</span>
               <span className="text-[10px] text-gray-300 tracking-widest uppercase">{content.tagline}</span>
             </div>
-            {/* Logo with brightness and contrast filters */}
-            <div className="relative w-44 h-20 bg-transparent flex items-center justify-center flex-shrink-0">
+            {/* Logo */}
+            <div className="relative w-32 sm:w-44 h-16 sm:h-20 bg-transparent flex items-center justify-center flex-shrink-0">
               <Image 
                 src="/exclusive_Tours.png" 
                 alt="Logo" 
@@ -211,25 +211,25 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-56 pb-36 px-6 text-center relative overflow-hidden bg-gradient-to-br from-[#0E1D3B] via-[#09152B] to-[#040A18]">
+      <section className="pt-44 sm:pt-56 pb-24 sm:pb-36 px-4 sm:px-6 text-center relative overflow-hidden bg-gradient-to-br from-[#112244] via-[#0B1736] to-[#0B1736]">
         <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none">
           <span className="text-[11vw] font-black tracking-widest text-[#D4AF37] uppercase">EXCLUSIVE</span>
         </div>
         <div className="max-w-4xl mx-auto relative z-10">
-          <span className="inline-block py-2 px-6 mb-6 rounded-full bg-gradient-to-r from-[#D4AF37]/20 to-[#AA7C11]/20 text-[#D4AF37] border border-[#D4AF37]/40 text-xs md:text-sm tracking-widest uppercase font-bold shadow-lg">
+          <span className="inline-block py-1.5 sm:py-2 px-4 sm:px-6 mb-6 rounded-full bg-gradient-to-r from-[#D4AF37]/20 to-[#AA7C11]/20 text-[#D4AF37] border border-[#D4AF37]/40 text-[11px] sm:text-sm tracking-widest uppercase font-bold shadow-lg">
             ✨ EXCLUSIVE TOURS EGYPT • ESTABLISHED 2006 ✨
           </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-md">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-md">
             {content.heroTitle}
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
             {content.heroDesc}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#services" className="px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-[#030712] font-bold rounded-xl shadow-2xl hover:scale-105 transition transform">
+            <a href="#services" className="px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-[#030712] font-bold rounded-xl shadow-2xl hover:scale-105 transition transform text-sm sm:text-base">
               {content.exploreBtn}
             </a>
-            <a href="#contact" className="px-8 py-4 border border-[#D4AF37]/60 text-[#D4AF37] font-semibold rounded-xl hover:bg-[#D4AF37]/10 transition shadow-lg">
+            <a href="#contact" className="px-6 sm:px-8 py-3.5 sm:py-4 border border-[#D4AF37]/60 text-[#D4AF37] font-semibold rounded-xl hover:bg-[#D4AF37]/10 transition shadow-lg text-sm sm:text-base">
               {content.contactBtn}
             </a>
           </div>
@@ -237,43 +237,43 @@ export default function Home() {
       </section>
 
       {/* 1. About Section */}
-      <section id="about" className="py-24 px-6 bg-[#0E1D3B]/50 border-y border-white/5 relative">
+      <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 bg-[#112244]/50 border-y border-white/5 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF37] mb-8">{content.aboutTitle}</h2>
-          <p className="text-lg text-gray-300 leading-relaxed mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#D4AF37] mb-6 sm:mb-8">{content.aboutTitle}</h2>
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6">
             {content.aboutText1}
           </p>
-          <p className="text-base text-gray-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
             {content.aboutText2}
           </p>
         </div>
       </section>
 
       {/* 2. Services Section */}
-      <section id="services" className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#D4AF37] mb-4">{content.servicesTitle}</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">{content.servicesDesc}</p>
+      <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#D4AF37] mb-4">{content.servicesTitle}</h2>
+          <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">{content.servicesDesc}</p>
         </div>
 
         {!activeCategory ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {categories.map((cat) => (
               <div 
                 key={cat.id} 
                 onClick={() => setActiveCategory(cat.id)}
-                className="rounded-3xl bg-[#0E1D3B] border border-[#D4AF37]/30 hover:border-[#D4AF37] transition overflow-hidden group shadow-xl cursor-pointer flex flex-col"
+                className="rounded-3xl bg-[#112244] border border-[#D4AF37]/30 hover:border-[#D4AF37] transition overflow-hidden group shadow-xl cursor-pointer flex flex-col"
               >
-                <div className="relative h-64 w-full overflow-hidden bg-black/40">
+                <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-black/40">
                   <img src={cat.mainImage} alt={lang === 'ar' ? cat.titleAr : cat.titleEn} className="object-cover w-full h-full group-hover:scale-110 transition duration-700 opacity-90" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E1D3B] via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#112244] via-transparent to-transparent"></div>
                 </div>
-                <div className="p-8 flex-1 flex flex-col justify-between">
+                <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4AF37] transition">
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-[#D4AF37] transition">
                       {lang === 'ar' ? cat.titleAr : cat.titleEn}
                     </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                    <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6">
                       {lang === 'ar' ? cat.descAr : cat.descEn}
                     </p>
                   </div>
@@ -285,14 +285,14 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <div className="bg-[#0A1428]/90 p-8 md:p-12 rounded-3xl border border-[#D4AF37]/40 shadow-2xl">
-            <div className="flex flex-col sm:flex-row justify-between items-center mb-10 pb-6 border-b border-[#D4AF37]/20 gap-4">
-              <h3 className="text-2xl md:text-4xl font-extrabold text-[#D4AF37]">
+          <div className="bg-[#112244]/90 p-6 sm:p-12 rounded-3xl border border-[#D4AF37]/40 shadow-2xl">
+            <div className="flex flex-col sm:flex-row justify-between items-center mb-8 sm:mb-10 pb-6 border-b border-[#D4AF37]/20 gap-4">
+              <h3 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-[#D4AF37] text-center sm:text-right">
                 {lang === 'ar' ? selectedCat.titleAr : selectedCat.titleEn}
               </h3>
               <button 
                 onClick={() => setActiveCategory(null)}
-                className="px-6 py-2.5 bg-[#D4AF37] text-[#030712] font-bold rounded-xl shadow-lg hover:opacity-90 transition text-sm"
+                className="px-5 py-2.5 bg-[#D4AF37] text-[#030712] font-bold rounded-xl shadow-lg hover:opacity-90 transition text-xs sm:text-sm"
               >
                 {content.backToServices}
               </button>
@@ -300,12 +300,12 @@ export default function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {selectedCat.images.map((imgObj, idx) => (
-                <div key={idx} className="rounded-2xl bg-[#040A18] border border-[#D4AF37]/20 hover:border-[#D4AF37] transition overflow-hidden group shadow-lg flex flex-col">
-                  <div className="relative h-52 w-full overflow-hidden bg-black/50">
+                <div key={idx} className="rounded-2xl bg-[#0B1736] border border-[#D4AF37]/20 hover:border-[#D4AF37] transition overflow-hidden group shadow-lg flex flex-col">
+                  <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-black/50">
                     <img src={imgObj.src} alt="Gallery item" className="object-cover w-full h-full group-hover:scale-110 transition duration-700 opacity-90" />
                   </div>
-                  <div className="p-5 flex-1 flex items-center justify-center text-center bg-[#081022]">
-                    <p className="text-gray-200 text-sm font-semibold tracking-wide">
+                  <div className="p-4 sm:p-5 flex-1 flex items-center justify-center text-center bg-[#112244]">
+                    <p className="text-gray-200 text-xs sm:text-sm font-semibold tracking-wide">
                       {lang === 'ar' ? imgObj.sloganAr : imgObj.sloganEn}
                     </p>
                   </div>
@@ -317,17 +317,17 @@ export default function Home() {
       </section>
 
       {/* 3. Portfolio Section */}
-      <section id="portfolio" className="py-24 px-6 bg-[#0E1D3B]/70 border-y border-white/5">
+      <section id="portfolio" className="py-16 sm:py-24 px-4 sm:px-6 bg-[#112244]/70 border-y border-white/5">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF37] mb-4">{content.portfolioTitle}</h2>
-          <p className="text-gray-400 mb-12">{content.portfolioDesc}</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#D4AF37] mb-4">{content.portfolioTitle}</h2>
+          <p className="text-sm sm:text-base text-gray-400 mb-8 sm:mb-12">{content.portfolioDesc}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs sm:text-sm">
             {[
               "League of Arab states", "Modon Ras El Hekma", "Alstom Transport (Monorail)", "Arab Sat (KSA)",
               "Ibn Sina Pharma", "Libyan Embassy in Egypt", "Saudi International Travel", "Fursan Group (KSA)",
               "VIP Platinum (UAE)", "Al Arif Sons (UAE)", "Biologix Pharma Lebanon", "DNATA (UAE)"
             ].map((client, idx) => (
-              <div key={idx} className="p-4 bg-[#060B18] border border-[#D4AF37]/20 rounded-xl text-gray-200 font-medium flex items-center justify-center text-center shadow-md">
+              <div key={idx} className="p-3.5 sm:p-4 bg-[#0B1736] border border-[#D4AF37]/20 rounded-xl text-gray-200 font-medium flex items-center justify-center text-center shadow-md">
                 {client}
               </div>
             ))}
@@ -336,46 +336,54 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#D4AF37] mb-6">{content.contactTitle}</h2>
-        <p className="text-gray-300 mb-12">{content.contactDesc}</p>
+      <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 max-w-5xl mx-auto text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#D4AF37] mb-4 sm:mb-6">{content.contactTitle}</h2>
+        <p className="text-sm sm:text-base text-gray-300 mb-8 sm:mb-12">{content.contactDesc}</p>
         
-        <div className="mb-16 p-8 bg-[#0E1D3B] rounded-3xl border border-[#D4AF37]/40 shadow-2xl max-w-md mx-auto flex flex-col items-center">
-          <div className="bg-white p-4 rounded-2xl shadow-inner mb-4">
+        <div className="mb-12 sm:mb-16 p-6 sm:p-8 bg-[#112244] rounded-3xl border border-[#D4AF37]/40 shadow-2xl max-w-sm sm:max-w-md mx-auto flex flex-col items-center">
+          <div className="bg-white p-3 sm:p-4 rounded-2xl shadow-inner mb-4">
             <img 
-              src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://wa.me/201000000000?text=Hello%20Exclusive%20Tours%20Egypt" 
-              alt="QR Code" 
-              className="w-40 h-40 object-contain"
+              src="/my_qr_code.png" 
+              alt="ExclusiveTours QR Code" 
+              className="w-36 h-36 sm:w-40 sm:h-40 object-contain"
             />
           </div>
-          <h3 className="text-lg font-bold text-[#D4AF37] mb-2">{content.qrTitle}</h3>
-          <p className="text-xs text-gray-300">{content.qrDesc}</p>
+          <h3 className="text-base sm:text-lg font-bold text-[#D4AF37] mb-2">{content.qrTitle}</h3>
+          <p className="text-xs text-gray-300 mb-4 px-2">{content.qrDesc}</p>
+          <a 
+            href="https://wa.me/201070343555?text=مرحباً، أود الاستفسار عن رحلات ExclusiveTours" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-emerald-400 font-bold hover:underline text-xs sm:text-sm"
+          >
+            💬 WhatsApp: +20 107 034 3555
+          </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-200 mb-12">
-          <div className="p-6 bg-[#0E1D3B] rounded-2xl border border-[#D4AF37]/30 shadow-lg">
-            <span className="block text-[#D4AF37] font-bold mb-2 text-base">📍 {lang === 'ar' ? 'العنوان' : 'Address'}</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-xs sm:text-sm text-gray-200 mb-12">
+          <div className="p-5 sm:p-6 bg-[#112244] rounded-2xl border border-[#D4AF37]/30 shadow-lg">
+            <span className="block text-[#D4AF37] font-bold mb-2 text-sm sm:text-base">📍 {lang === 'ar' ? 'العنوان' : 'Address'}</span>
             {content.address}
           </div>
-          <div className="p-6 bg-[#0E1D3B] rounded-2xl border border-[#D4AF37]/30 shadow-lg whitespace-nowrap">
-            <span className="block text-[#D4AF37] font-bold mb-2 text-base">📞 {lang === 'ar' ? 'التليفون والفاكس' : 'Telephone / Fax'}</span>
-            <div dir="ltr" className="inline-block font-mono text-xs sm:text-sm">
+          <div className="p-5 sm:p-6 bg-[#112244] rounded-2xl border border-[#D4AF37]/30 shadow-lg">
+            <span className="block text-[#D4AF37] font-bold mb-2 text-sm sm:text-base">📞 {lang === 'ar' ? 'التليفون والفاكس' : 'Telephone / Fax'}</span>
+            <div dir="ltr" className="inline-block font-mono text-xs sm:text-sm whitespace-nowrap">
               00 202 24016489 / 00 202 24016478
             </div>
             <br />
-            <div dir="ltr" className="inline-block font-mono text-xs sm:text-sm">
+            <div dir="ltr" className="inline-block font-mono text-xs sm:text-sm mt-1 whitespace-nowrap">
               Fax: 00 202 24016491
             </div>
           </div>
-          <div className="p-6 bg-[#0E1D3B] rounded-2xl border border-[#D4AF37]/30 shadow-lg">
-            <span className="block text-[#D4AF37] font-bold mb-2 text-base">✉️ {lang === 'ar' ? 'البريد الإلكتروني' : 'Email & Web'}</span>
+          <div className="p-5 sm:p-6 bg-[#112244] rounded-2xl border border-[#D4AF37]/30 shadow-lg">
+            <span className="block text-[#D4AF37] font-bold mb-2 text-sm sm:text-base">✉️ {lang === 'ar' ? 'البريد الإلكتروني' : 'Email & Web'}</span>
             info@exclusivetoursegypt.net<br />www.exclusivetoursegypt.net
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-[#020409] border-t border-[#D4AF37]/20 text-center text-gray-400 text-xs">
+      <footer className="py-6 sm:py-8 px-4 bg-[#070E22] border-t border-[#D4AF37]/20 text-center text-gray-400 text-[11px] sm:text-xs">
         <p>{content.footer}</p>
       </footer>
     </div>
